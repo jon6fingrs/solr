@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cron -f &
+#printenv
+PATH_env=${PATH}
+JAVA_HOME_env=$JAVA_HOME
+SOLR_PID_DIR_env=$SOLR_PID_DIR
+SOLR_INCLUDE_env=$SOLR_INCLUDE
+PWD_env=$PWD
+SOLR_PORT_env=$SOLR_PORT
+HOME_env=$SOLR_HOME
+SOLR_JETTY_HOST_env=$SOLR_JETTY_HOST
+SOLR_HOME_env=$SOLR_HOME
+SHLVL_env=$SHLVL
+SOLR_ZK_EMBEDDED_HOST_env=$SOLR_ZK_EMBEDDED_HOST
+SOLR_LOGS_DIR_env=$SOLR_LOGS_DIR
+LOG4J_PROPS_env=$LOG4J_PROPS
+JAVA_VERSION_env=$JAVA_VERSION
+usermod -d $HOME_env solr
+#chown -R solr /var/solr/logs/
+#echo "-----------------------------------------"
+#sudo -E -u solr PATH=$PATH_env JAVA_HOME=$JAVA_HOME_env SOLR_PID_DIR=$SOLR_PID_DIR_env SOLR_INCLUDE=$SOLR_INCLUDE_env PWD=$PWD_env SOLR_PORT=$SOLR_PORT_env HOME=$HOME_env SOLR_JETTY_HOST=$SOLR_JETTY_HOST_env SOLR_HOME=$SOLR_HOME_env SHLVL=$SHLVL_env SOLR_ZK_EMBEDDED_HOST=$SOLR_ZK_EMBEDDED_HOST_env SOLR_LOGS_DIR=$SOLR_LOGS_DIR_env LOG4J_PROPS=$LOG4J_PROPS_env JAVA_VERSION=$JAVA_VERSION_env bash /opt/solr/docker/scripts/solr-foreground
+solr-foreground -force
