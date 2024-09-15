@@ -1,7 +1,7 @@
 # solr
-solr plugin for dovecot
+solr plugin for dovecot. Won't really do anything without my (or likely a) dovecot image also.
 
-really intended for use with my dovecot container, but may work with other implementations of dovecot
+https://github.com/jon6fingrs/dovecot
 
 taken from the solr image and modified slightly to be compatible with dovecot out of the box.
 
