@@ -23,6 +23,7 @@ RUN sed -i 's/solr.autoSoftCommit.maxTime:-1/solr.autoSoftCommit.maxTime:6000/g'
 
 USER root
 COPY solr /var/spool/cron/crontabs/root
+RUN /opt/solr/bin/solr start -p 8984 -force && /opt/solr/bin/solr create_core -c mycore -force
 RUN chown root:crontab /var/spool/cron/crontabs/root
 RUN chmod 600 /var/spool/cron/crontabs/root
 CMD ["/opt/solr-9.6.1/docker/scripts/run.sh"]
